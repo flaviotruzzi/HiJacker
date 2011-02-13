@@ -1,2 +1,4 @@
 Hijack packets of your network and reconstruct media streams.
 Use on legal media only, respect copyrights, the use of the software is not my responsibility!
+
+There is a memory leak yet... ill figure out latter...
