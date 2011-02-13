@@ -34,7 +34,7 @@ class HiJacker():
 		self.size = 0
 		self.counter = 0
 		self.packets = []		
-		sniff(filter="tcp port 80", prn=self.callback)
+		sniff(filter="tcp port 80", prn=self.callback, store=0)
 		
 	def callback(self,packet):		
 		if hasattr(packet, 'load'):
@@ -78,7 +78,7 @@ class HiJacker():
 			else:
 				alphabet = 'abcdefghijklmnopqrstuvwxyz'
 				message = ''
-				for x in random.sample(alphabet,random.int(5,100)):
+				for x in random.sample(alphabet,random.randint(5,100)):
 					message += x
 				os.rename('tempHiJacker.mp3',message)
 				self.report("Not possible to get ID3 information random name generated:" + message)
@@ -93,7 +93,7 @@ class HiJacker():
 			print "Failed to send notification"
 			sys.exit(1)
 		
-		
+test = HiJacker()
 		
 		
 		
